@@ -48,7 +48,6 @@ public class AuthController {
 
     /**
      * Kullanıcı bilgilerini doğrula
-     * NOT: Üretimde bunu database'den yapmalısın
      */
     private boolean authenticateUser(String username, String password) {
         // Basit örnek - gerçekte UserService kullan
