@@ -1,0 +1,4 @@
+/.idea/
+/etl-runner-pres/node_modules/*
+/.idea/*
+.idea
