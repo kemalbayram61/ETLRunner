@@ -6,8 +6,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class ETLRunnerBusiness {
 
-	public static void main(String[] args) {
-		SpringApplication.run(ETLRunnerBusiness.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(ETLRunnerBusiness.class, args);
+    }
 
 }
