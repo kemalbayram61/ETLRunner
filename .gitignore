@@ -2,3 +2,7 @@
 /etl-runner-pres/node_modules/*
 /.idea/*
 .idea
+/ETLRunnerBus/.idea/
+/ETLRunnerBus/.idea/*
+/ETLRunnerBus/target/
+/ETLRunnerBus/target/*
