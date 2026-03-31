@@ -19,8 +19,8 @@ public class WebConfig implements WebMvcConfigurer {
                 .excludePathPatterns(
                         "/etlrunnerbus/v1/health",
                         "/etlrunnerbus/v1/health/**",
-                        "/etlrunnerbus/v1/auth/login",      // ← Ekle
-                        "/etlrunnerbus/v1/auth/refresh",    // ← Ekle
+                        "/etlrunnerbus/v1/auth/login",
+                        "/etlrunnerbus/v1/auth/refresh",
                         "/swagger-ui/**",
                         "/v3/api-docs/**"
                 );
