@@ -25,16 +25,9 @@
     <properties>
         <java.version>23</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <springdoc.version>2.7.0</springdoc.version>
+        <spring.version>3.4.0</spring.version>
+        <lombok.version>1.18.30</lombok.version>
     </properties>
-
-    <dependencies>
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <optional>true</optional>
-        </dependency>
-    </dependencies>
 
     <profiles>
         <!-- BUSINESS PROFILE -->
@@ -76,7 +69,13 @@
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-web</artifactId>
-                <version>3.4.0</version>
+                <version>${spring.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+                <optional>true</optional>
             </dependency>
         </dependencies>
     </dependencyManagement>
