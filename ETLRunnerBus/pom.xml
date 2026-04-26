@@ -35,4 +35,29 @@
             <optional>true</optional>
         </dependency>
     </dependencies>
+
+    <profiles>
+        <!-- BUSINESS PROFILE -->
+        <profile>
+            <id>business</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <modules>
+                <module>etl-runner-common</module>
+                <module>etl-runner-core</module>
+                <module>etl-runner-api</module>
+            </modules>
+        </profile>
+
+        <!-- BATCH PROFILE -->
+        <profile>
+            <id>batch</id>
+            <modules>
+                <module>etl-runner-common</module>
+                <module>etl-runner-core</module>
+                <module>etl-runner-worker</module>
+            </modules>
+        </profile>
+    </profiles>
 </project>

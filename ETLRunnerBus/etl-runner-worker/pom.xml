@@ -7,7 +7,6 @@
         <groupId>tr.com.kml</groupId>
         <artifactId>etl-runner-parent</artifactId>
         <version>1.0.0-SNAPSHOT</version>
-        <relativePath>../pom.xml</relativePath>
     </parent>
 
     <artifactId>etl-runner-worker</artifactId>
