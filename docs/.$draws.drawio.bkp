@@ -1,0 +1,37 @@
+<mxfile host="Electron">
+  <diagram name="Page-1" id="zpmYY_8cht1o5CvbDML-">
+    <mxGraphModel dx="836" dy="822" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="xvXoVEUiO3bPrtE8z5IL-6" edge="1" parent="1" source="xvXoVEUiO3bPrtE8z5IL-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="xvXoVEUiO3bPrtE8z5IL-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="xvXoVEUiO3bPrtE8z5IL-7" edge="1" parent="1" source="xvXoVEUiO3bPrtE8z5IL-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="xvXoVEUiO3bPrtE8z5IL-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="xvXoVEUiO3bPrtE8z5IL-8" edge="1" parent="1" source="xvXoVEUiO3bPrtE8z5IL-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="xvXoVEUiO3bPrtE8z5IL-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="xvXoVEUiO3bPrtE8z5IL-9" edge="1" parent="1" source="xvXoVEUiO3bPrtE8z5IL-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="xvXoVEUiO3bPrtE8z5IL-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="xvXoVEUiO3bPrtE8z5IL-1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="etl-runner-parent" vertex="1">
+          <mxGeometry height="60" width="120" x="280" y="280" as="geometry" />
+        </mxCell>
+        <mxCell id="xvXoVEUiO3bPrtE8z5IL-2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="etl-runner-api" vertex="1">
+          <mxGeometry height="60" width="120" x="60" y="420" as="geometry" />
+        </mxCell>
+        <mxCell id="xvXoVEUiO3bPrtE8z5IL-3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="etl-runner-worker" vertex="1">
+          <mxGeometry height="60" width="120" x="210" y="420" as="geometry" />
+        </mxCell>
+        <mxCell id="xvXoVEUiO3bPrtE8z5IL-4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="etl-runner-core" vertex="1">
+          <mxGeometry height="60" width="120" x="360" y="420" as="geometry" />
+        </mxCell>
+        <mxCell id="xvXoVEUiO3bPrtE8z5IL-5" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="etl-runner-common" vertex="1">
+          <mxGeometry height="60" width="120" x="510" y="420" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
