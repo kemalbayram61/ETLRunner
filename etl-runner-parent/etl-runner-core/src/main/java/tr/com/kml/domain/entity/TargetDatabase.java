@@ -5,7 +5,7 @@ import lombok.*;
 import tr.com.kml.enums.DatabaseType;
 
 @Entity
-@Table(name = "target_databases")
+@Table(name = "TARGET_DATABASE")
 @Getter
 @Setter
 @NoArgsConstructor
