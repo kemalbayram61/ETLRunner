@@ -2,7 +2,11 @@
 /etl-runner-pres/node_modules/*
 /.idea/*
 .idea
-/ETLRunnerBus/.idea/
-/ETLRunnerBus/.idea/*
-/ETLRunnerBus/target/
-/ETLRunnerBus/target/*
+/etl-runner-parent/.idea/
+/etl-runner-parent/.idea/*
+/etl-runner-parent/target/
+/etl-runner-parent/target/*
+/etl-runner-parent/target/
+/etl-runner-parent/etl-runner-core/target/
+/etl-runner-parent/etl-runner-common/target/
+/etl-runner-parent/etl-runner-api/target/
