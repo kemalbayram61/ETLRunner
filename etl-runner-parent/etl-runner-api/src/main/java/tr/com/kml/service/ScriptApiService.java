@@ -7,6 +7,8 @@ import tr.com.kml.domain.entity.Script;
 import tr.com.kml.dto.queue.ScriptCreateRequest;
 import tr.com.kml.enums.ScriptStatus;
 
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 public class ScriptApiService {
@@ -25,4 +27,9 @@ public class ScriptApiService {
     public Script createNewScript(ScriptCreateRequest scriptCreateRequest) {
         return scriptCoreService.create(scriptCreateRequest);
     }
+
+    public List<Script> getPendingApprovalScripts() {
+        return scriptCoreService.findPendingApprovalScripts();
+    }
 }
+

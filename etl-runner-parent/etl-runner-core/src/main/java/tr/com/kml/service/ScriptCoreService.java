@@ -4,6 +4,8 @@ import tr.com.kml.domain.entity.Script;
 import tr.com.kml.dto.queue.ScriptCreateRequest;
 import tr.com.kml.enums.ScriptStatus;
 
+import java.util.List;
+
 public interface ScriptCoreService {
     Script create(ScriptCreateRequest request);
 
@@ -12,4 +14,6 @@ public interface ScriptCoreService {
     Script findById(Long id);
 
     void updateExecutionResult(Long id, String status, String log);
+
+    List<Script> findPendingApprovalScripts();
 }

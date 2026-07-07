@@ -12,6 +12,7 @@ import tr.com.kml.repository.TargetDatabaseRepository;
 import tr.com.kml.service.ScriptCoreService;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Service
 @RequiredArgsConstructor
@@ -67,16 +68,19 @@ public class ScriptCoreServiceImpl implements ScriptCoreService {
         Script script = findById(id);
         script.setLastExecutionStatus(status);
         script.setLastExecutedAt(LocalDateTime.now());
-        // Loglar için ayrı bir AuditLog entity'si kullanmak daha sağlıklı olur
         scriptRepository.save(script);
     }
 
+    @Override
+    public List<Script> findPendingApprovalScripts() {
+        return scriptRepository.findByStatus(ScriptStatus.PENDING_APPROVAL);
+    }
+
     private void validateStatusTransition(ScriptStatus current, ScriptStatus next) {
-        // Java 23 Switch Expression ile geçiş kontrolü
         boolean isValid = switch (current) {
             case DRAFT -> next == ScriptStatus.PENDING_APPROVAL;
             case PENDING_APPROVAL -> next == ScriptStatus.APPROVED || next == ScriptStatus.REJECTED;
-            case REJECTED -> next == ScriptStatus.DRAFT; // Reddedileni tekrar taslağa çek
+            case REJECTED -> next == ScriptStatus.DRAFT;
             case APPROVED -> next == ScriptStatus.QUEUED;
             case QUEUED -> next == ScriptStatus.RUNNING;
             case RUNNING -> next == ScriptStatus.COMPLETED || next == ScriptStatus.FAILED;
@@ -88,3 +92,4 @@ public class ScriptCoreServiceImpl implements ScriptCoreService {
         }
     }
 }
+

@@ -7,8 +7,10 @@ import tr.com.kml.domain.entity.Script;
 import tr.com.kml.dto.queue.ScriptCreateRequest;
 import tr.com.kml.service.ScriptApiService;
 
+import java.util.List;
+
 @RestController
-@RequestMapping("/api/v1/scripts")
+@RequestMapping("/scripts")
 @RequiredArgsConstructor
 public class ScriptApiController {
 
@@ -30,4 +32,11 @@ public class ScriptApiController {
         scriptApiService.rejectScript(id, reason);
         return ResponseEntity.ok().build();
     }
+
+    @GetMapping("/pending-approval")
+    public ResponseEntity<List<Script>> getPendingApprovalScripts() {
+        List<Script> pendingScripts = scriptApiService.getPendingApprovalScripts();
+        return ResponseEntity.ok(pendingScripts);
+    }
 }
+
