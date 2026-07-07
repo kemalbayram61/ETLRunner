@@ -13,13 +13,15 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
-            .authorizeHttpRequests(authorize -> authorize
-                .requestMatchers("/health/**").permitAll()
-                .requestMatchers("/actuator/**").permitAll()
-                .anyRequest().authenticated()
-            )
-            .httpBasic(basic -> {})
-            .csrf(csrf -> csrf.disable());
+                .authorizeHttpRequests(authorize -> authorize
+                        .requestMatchers("/health/**").permitAll()
+                        .requestMatchers("/actuator/**").permitAll()
+                        .requestMatchers("/target-databases/**").permitAll()
+                        .anyRequest().authenticated()
+                )
+                .httpBasic(basic -> {
+                })
+                .csrf(csrf -> csrf.disable());
 
         return http.build();
     }

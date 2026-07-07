@@ -7,4 +7,5 @@ public record ScriptCreateRequest(
         @NotBlank String title,
         @NotBlank String content,
         @NotNull Long targetDbId
-) {}
+) {
+}
