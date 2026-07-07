@@ -67,8 +67,21 @@ public class TargetDatabaseApiService {
                 entity.getHost(),
                 entity.getPort(),
                 entity.getDatabaseName(),
+                entity.getServiceName(),
+                entity.getInstanceName(),
+                entity.getIntegratedSecurity(),
                 entity.getUsername(),
-                entity.isActive()
+                entity.getConnectionTimeout(),
+                entity.getConnectionPoolSize(),
+                entity.getMaxConnections(),
+                entity.getIdleTimeout(),
+                entity.getSslEnabled(),
+                entity.getSslMode(),
+                entity.getSslVerify(),
+                entity.getDescription(),
+                entity.getActive(),
+                entity.getTestConnection(),
+                entity.getConnectionUrl()
         );
     }
 }

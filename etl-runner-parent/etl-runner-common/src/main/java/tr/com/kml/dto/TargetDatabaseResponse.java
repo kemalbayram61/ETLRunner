@@ -9,7 +9,21 @@ public record TargetDatabaseResponse(
         String host,
         Integer port,
         String databaseName,
+        String serviceName,
+        String instanceName,
+        Boolean integratedSecurity,
         String username,
-        boolean active
+        Integer connectionTimeout,
+        Integer connectionPoolSize,
+        Integer maxConnections,
+        Integer idleTimeout,
+        Boolean sslEnabled,
+        String sslMode,
+        Boolean sslVerify,
+        String description,
+        Boolean active,
+        Boolean testConnection,
+        String connectionUrl
 ) {
 }
+

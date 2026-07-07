@@ -10,6 +10,20 @@ public record TargetDatabaseUpdateRequest(
         String databaseName,
         String username,
         String password,
-        boolean active
+        String serviceName,          // Oracle Service Name
+        String instanceName,          // MSSQL Instance Name
+        Boolean integratedSecurity,   // MSSQL Windows Auth
+        Integer connectionTimeout,
+        Integer connectionPoolSize,
+        Integer maxConnections,
+        Integer idleTimeout,
+        Boolean sslEnabled,
+        String sslMode,
+        String sslCertPath,
+        Boolean sslVerify,
+        String additionalProperties,
+        String description,
+        Boolean active
 ) {
 }
+

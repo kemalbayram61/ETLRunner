@@ -9,6 +9,20 @@ public record TargetDatabaseCreateRequest(
         Integer port,
         String databaseName,
         String username,
-        String password
+        String password,
+        String serviceName,          // Oracle Service Name
+        String instanceName,          // MSSQL Instance Name
+        Boolean integratedSecurity,   // MSSQL Windows Auth
+        Integer connectionTimeout,
+        Integer connectionPoolSize,
+        Integer maxConnections,
+        Integer idleTimeout,
+        Boolean sslEnabled,
+        String sslMode,
+        String sslCertPath,
+        Boolean sslVerify,
+        String additionalProperties,
+        String description
 ) {
 }
+

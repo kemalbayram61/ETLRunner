@@ -29,11 +29,26 @@ public class TargetDatabaseCoreServiceImpl implements TargetDatabaseCoreService 
                 .name(request.name())
                 .type(request.type())
                 .host(request.host())
-                .port(request.port())
+                .port(request.port() != null ? request.port() : request.type().getDefaultPort())
                 .databaseName(request.databaseName())
+                .serviceName(request.serviceName())
+                .instanceName(request.instanceName())
+                .integratedSecurity(request.integratedSecurity())
                 .username(request.username())
                 .encryptedPassword(encryptPassword(request.password()))
+                .connectionTimeout(request.connectionTimeout() != null ? request.connectionTimeout() : 30)
+                .connectionPoolSize(request.connectionPoolSize() != null ? request.connectionPoolSize() : 10)
+                .maxConnections(request.maxConnections() != null ? request.maxConnections() : 20)
+                .idleTimeout(request.idleTimeout() != null ? request.idleTimeout() : 900)
+                .sslEnabled(request.sslEnabled() != null ? request.sslEnabled() : false)
+                .sslMode(request.sslMode())
+                .sslCertPath(request.sslCertPath())
+                .sslVerify(request.sslVerify())
+                .additionalProperties(request.additionalProperties())
+                .description(request.description())
                 .active(true)
+                .createdBy(1L) // TODO: SecurityContext'ten gelecek
+                .updatedBy(1L)
                 .build();
 
         return targetDatabaseRepository.save(targetDatabase);
@@ -75,11 +90,25 @@ public class TargetDatabaseCoreServiceImpl implements TargetDatabaseCoreService 
         targetDatabase.setName(request.name());
         targetDatabase.setType(request.type());
         targetDatabase.setHost(request.host());
-        targetDatabase.setPort(request.port());
+        targetDatabase.setPort(request.port() != null ? request.port() : request.type().getDefaultPort());
         targetDatabase.setDatabaseName(request.databaseName());
+        targetDatabase.setServiceName(request.serviceName());
+        targetDatabase.setInstanceName(request.instanceName());
+        targetDatabase.setIntegratedSecurity(request.integratedSecurity());
         targetDatabase.setUsername(request.username());
         targetDatabase.setEncryptedPassword(encryptPassword(request.password()));
-        targetDatabase.setActive(request.active());
+        targetDatabase.setConnectionTimeout(request.connectionTimeout() != null ? request.connectionTimeout() : 30);
+        targetDatabase.setConnectionPoolSize(request.connectionPoolSize() != null ? request.connectionPoolSize() : 10);
+        targetDatabase.setMaxConnections(request.maxConnections() != null ? request.maxConnections() : 20);
+        targetDatabase.setIdleTimeout(request.idleTimeout() != null ? request.idleTimeout() : 900);
+        targetDatabase.setSslEnabled(request.sslEnabled() != null ? request.sslEnabled() : false);
+        targetDatabase.setSslMode(request.sslMode());
+        targetDatabase.setSslCertPath(request.sslCertPath());
+        targetDatabase.setSslVerify(request.sslVerify());
+        targetDatabase.setAdditionalProperties(request.additionalProperties());
+        targetDatabase.setDescription(request.description());
+        targetDatabase.setActive(request.active() != null ? request.active() : true);
+        targetDatabase.setUpdatedBy(1L); // TODO: SecurityContext'ten gelecek
 
         return targetDatabaseRepository.save(targetDatabase);
     }
@@ -95,7 +124,8 @@ public class TargetDatabaseCoreServiceImpl implements TargetDatabaseCoreService 
     @Transactional
     public void toggleActive(Long id) {
         TargetDatabase targetDatabase = findById(id);
-        targetDatabase.setActive(!targetDatabase.isActive());
+        targetDatabase.setActive(!targetDatabase.getActive());
+        targetDatabase.setUpdatedBy(1L); // TODO: SecurityContext'ten gelecek
         targetDatabaseRepository.save(targetDatabase);
     }
 
